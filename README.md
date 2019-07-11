@@ -1,7 +1,6 @@
 # This is just an example
- >> This will be deleted eventually 
+	-This will be deleted eventually 
 
 
 # About
-
->> Authenticating users with google
+	- Authenticating users with google

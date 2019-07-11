@@ -1,0 +1,12 @@
+{
+  "name": "google-auth",
+  "version": "1.0.0",
+  "description": "authenticating for google",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "Jason Anrico",
+  "license": "ISC"
+}
