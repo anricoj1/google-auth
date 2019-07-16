@@ -1,0 +1,18 @@
+<% var rootPath = '../../'; %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include(rootPath + 'partials/includes') %>
+  </head>
+  <body>
+    <%- include(rootPath + 'partials/nav') %>
+  <div class="jumbotron text-center">
+    <img src="images/twitter.png" style="height: 400px; width: 700px"></img>
+    <p class="lead"><b>Link Twitter</b></p>
+
+    <a href="/auth/google" class="btn btn-info btn-lg"><span class="fa fa-twitter"></span> Twitter</a>
+  </div>
+  <%- include(rootPath + 'partials/footer') %>
+
+  </body>
+</html>

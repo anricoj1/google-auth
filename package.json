@@ -8,5 +8,10 @@
     "start": "node server.js"
   },
   "author": "Jason Anrico",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^1.9.1",
+    "popper.js": "^1.15.0"
+  }
 }

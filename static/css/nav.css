@@ -1,0 +1,32 @@
+.navbar-nav .login-container {
+  float: right;
+  height: 0px;
+  margin: 0px;
+}
+
+.navbar-nav input[type=text] {
+  padding: 5px;
+  margin-top: 10px;
+  font-size: 11px;
+  border: none;
+  width: 200px;
+}
+
+.navbar-nav .login-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  margin-right: 16px;
+  background-color: black;
+  color: white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-nav .login-container
+button:hover {
+  background-color: blue;
+}

@@ -1,0 +1,18 @@
+<% var rootPath = '../../'; %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include(rootPath + 'partials/includes') %>
+  </head>
+  <body>
+    <%- include(rootPath + 'partials/nav') %>
+  <div class="jumbotron text-center">
+    <img src="images/youtube.jpg" style="height: 400px; width: 700px"></img>
+    <p class="lead"><b>Link Youtube</b></p>
+
+    <a href="/auth/google" class="btn btn-danger btn-lg"><span class="fa fa-youtube"></span> Youtube</a>
+  </div>
+  <%- include(rootPath + 'partials/footer') %>
+
+  </body>
+</html>

@@ -4,13 +4,14 @@
     <% include ../partials/includes %>
   </head>
   <body>
-    <% include ../partials/nav %>
-  <div class="container">
-    <img src="images/api.png"></img>
-    <p class="lead" style="margin-left: 400px"><b>Homepage</b></p>
-    <a href="/register" class="btn btn-primary btn-lg" style="margin-left: 370px">Register</a>
+    <% include ../partials/lnav %>
+  <div class="jumbotron text-center">
+    <img src="images/api.png" style="height: 400px; width: 700px"></img>
+    <p class="lead"><b>Homepage</b></p>
+    <a href="/register" class="btn btn-primary btn-lg">Register</a>
     <a href="/auth/google" class="btn btn-danger btn-lg"><span class="fa fa-google-plus"></span> Google</a>
   </div>
+  <% include ../partials/footer %>
 
   </body>
 </html>
