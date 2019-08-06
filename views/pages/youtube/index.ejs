@@ -9,10 +9,21 @@
   <div class="jumbotron text-center">
     <img src="images/youtube.jpg" style="height: 400px; width: 700px"></img>
     <p class="lead"><b>Link Youtube</b></p>
+    <div class="row">
+      <div class="col-lg-0">
+        <p class="subs"></p>
+        <h5>Subscribers</h5>
+      </div>
+      <div class="col-lg">
+        <p class="views"></p>
+        <h5>Views</h5>
+      </div>
+    </div>
 
     <a href="/auth/google" class="btn btn-danger btn-lg"><span class="fa fa-youtube"></span> Youtube</a>
   </div>
   <%- include(rootPath + 'partials/footer') %>
+  <script type="text/javascript" src="scripts/yt.js"></script>
 
   </body>
 </html>

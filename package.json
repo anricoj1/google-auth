@@ -1,17 +1,39 @@
 {
   "name": "google-auth",
   "version": "1.0.0",
-  "description": "authenticating for google",
+  "description": "testing with nodejs",
   "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "passport": "^0.4.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "node server.js",
+    "test": "./run.sh",
     "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anricoj1/google-auth.git"
   },
   "author": "Jason Anrico",
   "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^4.1.1",
-    "jquery": "^1.9.1",
-    "popper.js": "^1.15.0"
-  }
+  "bugs": {
+    "url": "https://github.com/anricoj1/google-auth/issues"
+  },
+  "homepage": "https://github.com/anricoj1/google-auth#readme"
 }

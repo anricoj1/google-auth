@@ -1,0 +1,35 @@
+<% var rootPath = '../../'; %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Node Authentication</title>
+		<%- include(rootPath + 'partials/includes') %>
+
+	</head>
+	<body>
+		<%- include(rootPath + 'partials/lnav') %>
+		<div class="container container-fluid">
+		<div class="container">
+			<h1 class="lead"><b>Register</b></h1>
+			<% if (message.length > 0) { %>
+				<div class="alter alter-danger"><%= message %></div>
+			<% } %>
+			<form action="/signup" method="post">
+					<div class="form-group">
+						<label>Email</label>
+						<input type="text" class="form-control" name="username">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" class="form-control" name="password">
+					</div>
+					<button type="submit" class="btn btn-primary btn-lg">Register</button>
+				</form>
+
+				<hr>
+				<p>Go <a href="/">Home</a>.</p>
+			</div>
+		</div>
+
+	</body>
+</html>
