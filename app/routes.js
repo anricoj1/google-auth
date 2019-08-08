@@ -1,6 +1,6 @@
 module.exports = function(app, passport){
-    app.get('/', function(req, res){
-        res.render('../views/pages/index.ejs');
+    app.get('/', function(req, res) {
+      res.render('../views/pages/index.ejs', {user : req.user})
     });
 
     app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
@@ -10,7 +10,7 @@ module.exports = function(app, passport){
                                          failureRedirect: '/'}));
 
     app.get('/login', function(req, res){
-      res.render('../views/pages/user/login.ejs', { message: req.flash('loginMessage') });
+      res.render('../views/pages/user/login.ejs', { message: req.flash('loginMessage'), user: req.user });
     });
 
     app.post('/login', passport.authenticate('local-login', {
@@ -30,7 +30,7 @@ module.exports = function(app, passport){
     });
 
     app.get('/signup', function(req, res){
-      res.render('../views/pages/user/register.ejs', { message: req.flash('signupMessage') });
+      res.render('../views/pages/user/register.ejs', { message: req.flash('signupMessage'), user : req.user });
     });
 
     app.post('/signup', passport.authenticate('local-signup', {
@@ -41,35 +41,36 @@ module.exports = function(app, passport){
 
     app.get('/profile', isLoggedIn, function(req, res) {
       res.render('../views/pages/user/profile.ejs', {
-        user : req.user
+        user : req.user,
+        session : req.session,
       });
     });
 
     app.get('/twitter', function(req, res){
-      res.render('../views/pages/twitter/index.ejs');
+      res.render('../views/pages/twitter/index.ejs', {user : req.user})
     });
 
     app.get('/facebook', function(req, res){
-      res.render('../views/pages/facebook/index.ejs')
+      res.render('../views/pages/facebook/index.ejs', {user : req.user})
     });
 
     app.get('/twitch', function(req, res){
-      res.render('../views/pages/twitch/index.ejs')
+      res.render('../views/pages/twitch/index.ejs', {user : req.user})
     });
 
 
     app.get('/youtube', function(req, res){
-      res.render('../views/pages/youtube/index.ejs')
+      res.render('../views/pages/youtube/index.ejs', {user : req.user})
     });
 
 
     app.get('/github', function(req, res){
-      res.render('../views/pages/github/index.ejs')
+      res.render('../views/pages/github/index.ejs', {user : req.user})
     });
 
 
     app.get('/instagram', function(req, res){
-      res.render('../views/pages/instagram/index.ejs')
+      res.render('../views/pages/instagram/index.ejs', {user : req.user})
     });
 
     app.get('/logout', function(req, res) {

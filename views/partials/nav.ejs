@@ -20,8 +20,12 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+              <% if (user) { %>
+                <li><a href="/logout" style="color:#ffffff">Logout</a></li>
+            <%  } else { %>
                 <li><a href="/login" style="color:#ffffff">Login</a></li>
                 <li><a href="/signup" style="color:#ffffff">Register</a></li>
+            <%  } %>
             </ul>
         </div>
     </div>
