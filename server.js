@@ -19,6 +19,8 @@ var passport = require('passport');
 var mysql = require('mysql');
 
 
+var twitter = require('twitter');
+
 require('./config/passport')(passport);
 
 
