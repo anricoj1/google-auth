@@ -16,11 +16,18 @@ var url = require('url');
 var http = require('http');
 var passport = require('passport');
 
-var mysql = require('mysql');
-
-
+// twitter requests use this
+var configAuth = require('./config/auth');
 var twitter = require('twitter');
+var twitterClient = new twitter({
+  consumer_key: configAuth.twitterAuth.consumer_key,
+  consumer_secret: configAuth.twitterAuth.consumer_secret,
+  access_token_key: configAuth.twitterAuth.access_token_key,
+  access_token_secret: configAuth.twitterAuth.access_token_secret
+});
 
+
+// passport call
 require('./config/passport')(passport);
 
 
@@ -44,7 +51,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-require('./app/routes.js')(app, passport);
+require('./app/routes.js')(app, passport, twitterClient);
 
 app.listen(port);
 console.log('Server running on http://localhost:8080');

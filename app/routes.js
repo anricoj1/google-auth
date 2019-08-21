@@ -1,13 +1,4 @@
-var twitter = require('twitter');
-var configAuth = require('../config/auth');
-var params = {screen_name: 'jason_anrico'};
-var client = new twitter({
-  consumer_key: configAuth.twitterAuth.consumer_key,
-  consumer_secret: configAuth.twitterAuth.consumer_secret,
-  access_token_key: configAuth.twitterAuth.access_token_key,
-  access_token_secret: configAuth.twitterAuth.access_token_secret
-});
-module.exports = function(app, passport){
+module.exports = function(app, passport, twitterClient){
     app.get('/', function(req, res) {
       res.render('../views/pages/index.ejs', {user : req.user})
     });
@@ -22,13 +13,6 @@ module.exports = function(app, passport){
       res.render('../views/pages/user/login.ejs', { message: req.flash('loginMessage'), user: req.user });
     });
 
-    app.get('/twit_test', function(req, res) {
-      client.get('statuses/user_timeline', params, function(err, tweets, response) {
-        if (!err) {
-          console.log(tweets)
-        }
-      })
-    })
 
     app.post('/login', passport.authenticate('local-login', {
       successRedirect : '/profile',
@@ -64,7 +48,10 @@ module.exports = function(app, passport){
     });
 
     app.get('/twitter', function(req, res){
-      res.render('../views/pages/twitter/index.ejs', {user : req.user})
+      var params = {screen_name: 'jason_anrico'};
+      twitterClient.get('statuses/user_timeline', params, function(err, tweets, response) {
+        res.render('../views/pages/twitter/index.ejs', {user : req.user, tweet: tweets})
+      });
     });
 
     app.get('/facebook', function(req, res){

@@ -1,25 +1,27 @@
-# This is just an example
-	-This will be deleted eventually
+## Social Media API's (Social Media Tracker)
+Small scale to CSC400 repo
 
 
-# About
-	- Authenticating users with google
+## About
+This Application is serving as a small scale development
+for my CSC400 Capstone Project. This is focusing more on
+back end / server side coding with API's and transforming them
+to html objecs rather than full scale html pages being in the mix.
 
 
-# Task (Completed)
-	- Authenticated Users With
-		- LocalStrategy (passport-local)
-		- GoogleStrategy (passport-google-oauth)
-		- Youtube User Data
+## Recent Tasks
+	- Twitter Api (Completed)
+	- Youtube Api (Completed)
+	- Facebook Api (In Progress)
+I do want to explore further into each api as time goes on
+but getting the basics of each first before trying to go too far.
 
-
-# What Im Learning
-I have came to realize that not many people use MySQL for Google Authenticating.
-Im fairly familiar with using MySQL so I decided that it was in my best interest
-to stick with it. Instead of using MongoDB and creating a User model, I created
-database with MySQL Server with a table called User. Instead of auto incrementing id's
-I used uuid to generate a longer id to be a little more secure and so I could insert both
-local signups and google logins to the same database. (Allowing Google Users To Log Out)
+## What Can You Do?
+In current state you can:
+	- log in with a local account or with google+
+	- (each are inserted to a DB model below).
+	- You can view most of your Twitter and Youtube Info.
+	- Facebook is just displaying name and Page_id. (more to come)
 
 # Database
 CREATE DATABASE Test;

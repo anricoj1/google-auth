@@ -11,9 +11,67 @@
     <p class="lead"><b>Link Twitter</b></p>
 
     <a href="/auth/google" class="btn btn-info btn-lg"><span class="fa fa-twitter"></span> Twitter</a>
+    <p class="tweets"></p>
   </div>
-  <%- include(rootPath + 'partials/footer') %>
-  <script type="text/javascript" src="scripts/twitt.js"></script>?
+  <div class="container">
+    <div class="page-header text-center">
+      <h1><span class="fa fa-twitter"></span> Twitter Page</h1>
+      <a href="/signup" class="btn btn-info btn-sm"><span class="fa fa-twitter"></span> Twitter</a>
+    </div>
+
+    <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <h3><span class="fa fa-twitter"></span> Twitter Info</h3>
+              <p>
+                <strong>Name</strong>: <b class="name"></b><br>
+                <strong>Created At</strong>: <b class="created_at"></b><br>
+                <strong>User @</strong>: <b class="screen_name"></b><br>
+                <strong>Location</strong>: <b class="location"></b><br>
+                <strong>Description</strong>: <b class="description"></b><br>
+                <strong>Followers</strong>: <b class="follwers"></b><br>
+                <strong>Following</strong>: <b class="following"></b><br>
+                <strong>Likes</strong>: <b class="likes"></b><br>
+                <strong>Tweets</strong>: <b class="tweets"></b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%- include(rootPath + 'partials/footer') %>
+      <script>
+      $(document).ready(function(loadTwitter) {
+        var tweets = <%- JSON.stringify(tweet) %>;
+        loadTwitter(tweets);
+
+        function loadTwitter(tweets) {
+          var data = {
+            'name': tweets[0].user.name,
+            'screen_name': tweets[0].user.screen_name,
+            'location': tweets[0].user.location,
+            'description': tweets[0].user.description,
+            'follwers' : tweets[0].user.followers_count,
+            'following' : tweets[0].user.friends_count,
+            'created_at' : tweets[0].user.created_at,
+            'likes' : tweets[0].user.favourites_count,
+            'tweets' : tweets[0].user.statuses_count
+          }
+          $('.name').html(data.name);
+          $('.screen_name').html(data.screen_name);
+          $('.location').html(data.location);
+          $('.description').html(data.description);
+          $('.follwers').html(data.follwers);
+          $('.following').html(data.following);
+          $('.created_at').html(data.created_at);
+          $('.likes').html(data.likes);
+          $('.tweets').html(data.tweets);
+        }
+        window.setInterval(function() {
+          loadTwitter(tweets);
+        }, 1000);
+      });
+    </script>
 
   </body>
 </html>
